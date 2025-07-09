@@ -1,53 +1,31 @@
-import React from "react";
+import tourImage from '../assets/tour.jpg';  
 
-export default function TourSection() {
+function TourSection() {
   return (
-    <>
-      <section className="tour">
-        <h2 className="tour-title">TOURNÉE 2025</h2>
-        <div className="tour-cards">
-          {[...Array(4)].map((_, i) => (
-            <div className="card" key={i}>
-              <h3>TITRE</h3>
-              <p>Forem ipsum dolor sit ame</p>
-            </div>
-          ))}
-        </div>
-        <button className="btn-ticket">Achat du billet</button>
-      </section>
-
-      <style>
-        {`
-          .tour {
-            background: #ddd;
-            padding: 40px;
-            text-align: center;
-          }
-          .tour-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-          }
-          .tour-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-            
-          }
-          .card {
-            padding: 20px;
-            font-weight: bold;
-          }
-          .btn-ticket {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-          }
-          .card h3 {
-            font-size: 1rem;
-          }
-        `}
-      </style>
-    </>
+    <section className="tour-section">
+      <img src={tourImage} alt="Tour Banner" />
+      <button>Achat du billet</button>
+      <style>{`
+        .tour-section {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        .tour-section img {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+        }
+        .tour-section button {
+          padding: 10px 20px;
+          background-color: black;
+          color: white;
+          border: none;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+      `}</style>
+    </section>
   );
 }
+
+export default TourSection;
